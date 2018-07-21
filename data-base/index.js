@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/angular6');
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 

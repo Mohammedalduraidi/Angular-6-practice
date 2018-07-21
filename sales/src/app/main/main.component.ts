@@ -28,35 +28,37 @@ export class MainComponent implements OnInit {
 
   }
   submit(){
-    if(this.modalForm.value.modalFormSubjectEx === this.modalForm.value.modalFormTextEx && this.modalForm.value.modalFormNameEx.length !== 0){
+    if(this.modalForm.value.modalFormSubjectEx === this.modalForm.value.modalFormTextEx && this.modalForm.value.modalFormNameEx.length !== 0 && this.modalForm.value.modalFormSubjectEx.length >= 8 && this.modalForm.value.modalFormTextEx.length >=8){
       axios.post('/signup', {
        username: this.modalForm.value.modalFormNameEx,
        email: this.modalForm.value.modalFormEmailEx,
        password:this.modalForm.value.modalFormSubjectEx
       }).then(()=>{
-        console.log("Hello world")
+        window.location.href="/home"
       }).catch(()=>{
         alert("this user already exist")
       })
 
-    }else{
-      
+    }else{   
       alert("the fuick is wrong with you")
-      this.modalForm.value.modalFormSubjectEx = null
-      return '<p>123123<p>';
-      
     }
+
+    this.modalForm.value.modalFormSubjectEx = '';
+    this.modalForm.value.modalFormTextEx = '';
   }
 
   alo() {
-     axios.post("/login", {username: this.registerForm.value.orangeFormName,
-                        password: this.registerForm.value.orangeFormPass
+    if(this.registerForm.value.orangeFormPass.length >= 8){ 
+      axios.post("/login", {username: this.registerForm.value.orangeFormName,
+                            password: this.registerForm.value.orangeFormPass
       }).then((res)=>{
-        alert("hello world")
-       console.log("Hello world",res)
+        window.location.href="/home"
       }).catch((err)=>{
-          throw err
+          alert("username does not exist")
       })
+    }else{
+      alert("password should be bigger than 7 characters")
+     }
   }
 }
 

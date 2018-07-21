@@ -10,17 +10,17 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
-    { path: 'home',
-    component: HomeComponent
+    { path: 'main',
+    component: MainComponent
   },
   { path: '',
-    redirectTo: '/home',
+    redirectTo: '/main',
     pathMatch: 'full'
   },
     {
-   path: 'main',
-   component: MainComponent,
-   data: { title: 'main' }
+   path: 'home',
+   component: HomeComponent,
+   data: { title: 'home' }
  }
 
   ]
