@@ -7,7 +7,7 @@ db.on('error', () => {
   console.log('mongoose connection error');
 });
 
-db.once('open', () =>{
+db.once('open', () => {
   console.log('mongoose connected successfully');
 });
 
@@ -16,9 +16,9 @@ let Schema = mongoose.Schema; // Create a mongoose schema
 
 
 let userSchema = new Schema({
-  username: {type: String},
-  email: {type: String},
-  password: {type: String}
+  username: { type: String },
+  email: { type: String },
+  password: { type: String }
 })
 
 userSchema = mongoose.model('userSchema', userSchema);

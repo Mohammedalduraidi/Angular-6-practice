@@ -5,25 +5,27 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
-    { path: 'main',
+  {
+    path: 'main',
     component: MainComponent
   },
-  { path: '',
+  {
+    path: '',
     redirectTo: '/main',
     pathMatch: 'full'
   },
-    {
-   path: 'home',
-   component: HomeComponent,
-   data: { title: 'home' }
- }
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'home' }
+  }
 
-  ]
+]
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    FormsModule ,
+    FormsModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(
@@ -45,10 +47,10 @@ const appRoutes: Routes = [
     )
   ],
   exports: [
-  MatButtonModule, 
-  MatCheckboxModule,
-  BrowserAnimationsModule,
-  FormsModule ,
+    MatButtonModule,
+    MatCheckboxModule,
+    BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],
